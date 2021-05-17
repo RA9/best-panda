@@ -1,0 +1,42 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+cmsName: netlifycms
+
+dataDir: null
+pagesDir: src/content
+
+assets:
+  referenceType: static
+  staticDir: static/assets
+  publicPath: /assets
+
+logicFields:
+  - slug
+  - home.featuredImage
+  - posts.date
+  - posts.featuredImage
+  - general.meta.titleTemplate
+  - general.meta.siteUrl
+  - general.meta.iconimage
+
+models:
+  home:
+    type: page
+    label: Home page
+    file: pages/index.md
+    singleInstance: true
+  about:
+    type: page
+    label: About page
+    file: pages/about.md
+  contact:
+    type: page
+    label: About page
+    file: pages/contact.md
+    singleInstance: true
+  posts:
+    type: page
+    label: Posts
+    folder: posts
+    urlPath: '{slug}'
+    filePath: 'posts/{moment_format("YYYY-MM-DD")}-{slug}.md'
